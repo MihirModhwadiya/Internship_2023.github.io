@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Attendance-1</title>
+    <link href="./https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="./css2/styles.css" rel="stylesheet" />
+    <script src="./https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="./https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .fcontainer {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .fcontainer2 {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .sheet {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        /* circle of time sheet */
+        .circle {
+            border: 2px solid black;
+            border-radius: 110px 110px;
+            border: 5px solid white;
+            background-color: #1D4D80;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 10px;
+            padding-right: 20px;
+            align-self: center;
+            justify-content: space-between;
+        }
+
+        .myButton {
+            align-items: start;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            font-size: 20px;
+            margin-left: 22px;
+            padding: 13px 40px 13px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+        }
+
+        .button2 {
+            background-color: #5D5D5D;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 22px;
+            padding: 13px 110px 13px 110px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+        }
+
+        /* input */
+        label {
+            color: #1D4D80;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        input {
+            padding-right: 50px;
+            padding-left: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        select {
+            padding-right: 50px;
+            padding-left: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* search button */
+        .search-btn {
+            background-color: #DB6830;
+            padding: 12px 90px 12px 90px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* table */
+        thead {
+            font-weight: bold;
+        }
+
+        /* footer */
+        .page {
+            float: right;
+            /* margin-right: 25%; */
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed clrr">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark p">
+        <a class="navbar-brand ps-3" id="start" href="#"><img src="./assets/img/vaistra.png" alt="logo"
+                height="50px"></a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 p-2" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+
+        <div class="nav-link ms-auto">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <span class="fas fa-bell text-light" id="navbarDropdown2" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"></span>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+                        <li class="d-flex justify-content-between">
+                            <div class="me-5 dropdown-item clr">Notification</div>
+                            <button class="ms-5 dropdown-item orng bg-light">clear all</button>
+                        </li>
+                        <hr>
+                        <li>
+                            <div class="my-2 dropdown-item p-clr-3 border-start border-5 border-dark" href="#!">
+                                <p class="clr">Task completed - update CRUD</p>
+                                <p class="clr2 minn">43 Mins ago</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="my-2 dropdown-item p-clr-3 border-start border-5 border-dark" href="#!">
+                                <p class="clr">Leave Acceptted by HR</p>
+                                <p class="clr2 minn">1 Hour ago</p>
+                            </div>
+                        </li>
+                        <li><button class="dropdown-item text-center orng bg-light" href="#!">View all
+                                Notifications</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav ms-md-0 me-3 me-lg-4 border-1 border=light">
+            <li class="nav-item dropdown">
+                <img class="rounded-2 border border-light p-1" src="./assets/img/profile.png" alt="logo" height="50px"
+                    width="60px" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav" class="mt-3">
+            <nav class="sb-sidenav accordion" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav mt-2">
+                        <a class="nav-link text-light btn-style py-2" href="#">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/home.png" width="20" alt="">
+                            </div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link text-light btn-style py-2" href="#">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/attendance.png" width="20" alt="">
+                            </div>
+                            Attendence
+                        </a>
+                        <a class="nav-link text-light btn-style py-2" href="#">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/task.png" width="20" alt=""></div>
+                            Task
+                        </a>
+                        <a class="nav-link text-light btn-style py-2" href="#">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/daily.png" width="20" alt="">
+                            </div>
+                            Daily Reporting
+                        </a>
+                        <a class="nav-link text-light btn-style py-2" href="#">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/leave.png" width="20" alt="">
+                            </div>
+                            Leave
+                        </a>
+                        <a class="nav-link text-light btn-style py-2" href="#">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/holiday.png" width="20" alt="">
+                            </div>
+                            holidays
+                        </a>
+                        <a class="nav-link collapsed text-light btn-style py-2" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon pe-1 "><img src="./assets/img/report.png" width="20" alt="">
+                            </div>
+                            Reports
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link text-light btn-style sub-text" href="#">Attendence Report</a>
+                                <a class="nav-link text-light btn-style sub-text" href="#">Task Report</a>
+                                <a class="nav-link text-light btn-style sub-text" href="#">Monthly Report</a>
+                                <a class="nav-link text-light btn-style sub-text" href="#">Yearly Report</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                   <a class="nav-link text-light btn-style" href="#">
+                        <button type="button" class="btn btn position-relative">
+                            <iconify-icon icon="mdi:message-reply-text-outline" style="color: white; font-size: 20px;"></iconify-icon>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                4
+                                <!-- <span class="visually-hidden">unread messages</span> -->
+                            </span>
+                        </button><span>Disscuse with HR</span></a>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+
+                <!-- Attendance headding -->
+                <br><br>
+                <div class="fcontainer mx-5">
+                    <h1 style="color: #1D4D80;"><b>Attendance</b></h1><br>
+                    <h3 style="color: #1D4D80;">Dashboard / <span style="color: grey;">Attendance</span></h3>
+                </div>
+
+                <div class="container d-flex justify-content-center">
+
+                    <div class="fcontainer2">
+                        <h3 style="color: #1D4D80; font-size: 30px;" class="mt-5 mx-4"><b>Timesheet</b> <span
+                                style="color: white;">10 Mar 2023</span></h3>
+
+                        <div class="sheet my-4">
+                            <div class="myButton">
+                                <a type="submit" class="button1 mb-4" href="attendanceready.html">Wed, 10th Mar 2023 10AM</a><br>
+                                <a type="submit" class="button2" href="attendance.html">Punch Out</a>
+                            </div>
+                            <div class="circle mx-4">
+                                <h1>3.45 hrs</h1>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                
+                <!-- select date input -->
+                <section class="container my-5 ">
+                    <div class="row">
+
+                        <div class="col">
+                            <label>Select Date</label><br>
+                            <input type="date" name="date" id="date" class="py-2">
+                        </div>
+
+                        <div class="col">
+                            <label>Select Month</label><br>
+                            <select name="month" class="py-2">
+                                <option>e.g. January</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="Septamber">Septamber</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col">
+                            <label>Select Year</label><br>
+                            <select name="year" class="py-2">
+                                <option>e.g. 2023</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                            </select>
+                        </div>
+
+                        <div class="col">
+                            <button type="submit" class="btn btn-outline-secondary search-btn mt-3">Search</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- table -->
+                <section>
+                    <div class="container">
+                        <table class="table table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Punch In</th>
+                                    <th scope="col">Punch Out</th>
+                                    <th scope="col">Prduction</th>
+                                    <th scope="col">Break</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr class="table-primary">
+                                    <th scope="row">1</th>
+                                    <td>9 March 2023</td>
+                                    <td>10 AM</td>
+                                    <td>7 PM</td>
+                                    <td>9 hrs</td>
+                                    <td>1 hr</td>
+                                </tr>
+
+                                <tr class="table-light">
+                                    <th scope="row">2</th>
+                                    <td>8 March 2023</td>
+                                    <td>10 AM</td>
+                                    <td>7 PM</td>
+                                    <td>9 hrs</td>
+                                    <td>1 hr</td>
+                                </tr>
+
+                                <tr class="table-primary">
+                                    <th scope="row">3</th>
+                                    <td>7 March 2023</td>
+                                    <td>10 AM</td>
+                                    <td>7 PM</td>
+                                    <td>9 hrs</td>
+                                    <td>1 hr</td>
+                                </tr>
+
+                                <tr class="table-light">
+                                    <th scope="row">4</th>
+                                    <td>6 March 2023</td>
+                                    <td>10 AM</td>
+                                    <td>7 PM</td>
+                                    <td>9 hrs</td>
+                                    <td>1 hr</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                </section>
+            </main>
+            <footer style="background-color: white; padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
+                <span>Showing 1 to 4 of 10 entries</span>
+                <div class="page">
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="./https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="./js/scripts.js"></script>
+    <script src="./https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="./assets/demo/chart-area-demo.js"></script>
+    <script src="./assets/demo/chart-bar-demo.js"></script>
+    <script src="./https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="./js/datatables-simple-demo.js"></script>
+    <script src="./https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
+</html>
