@@ -23,8 +23,4 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> intern/soneir
