@@ -2,213 +2,179 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Leave</title>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <link rel="stylesheet" type="text/css" href="./style_add_leave.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="./css/style_add_leave.css" rel="stylesheet" />
+    <link href="./css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
-    <header>
-    <!-- <nav class="navbar navbar-expand-lg">
-            <div class="logo">
-                <img src="/Screenshot/3.png" class="navbar-brand" alt="Logo" width="150" height="70">
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="Left-Logo d-flex">
-                    <i class='bx bxs-bell-ring'></i>
-                    <img src="/Screenshot/profile.jpg" alt="Logo" width="80" height="60">
-                </div>
-            </div>
-        </nav> -->
+<body class="sb-nav-fixed clrr">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark p">
+        <a class="navbar-brand ps-3" id="start" href="index.html"><img src="./assets/img/3.png" alt="logo"
+                height="50px"></a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 p-2" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
 
-
-    <!-- below work -->
-
-
-    <nav class="navbar">
-            <div class="logo">
-                <img src="/Screenshot/3.png" alt="Logo" width="150" height="70">
-            </div>
-            <div class="Left-Logo">
-                <i class='bx bxs-bell-ring'></i>
-                <img src="/Screenshot/profile.jpg" alt="Logo" width="80" height="60">
-            </div>
-        </nav>
-    </header>
-
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <div class="blue col-auto col-md-4 col-lg-2 min-vh-100 d-flex flex-column justify-content-between">
-                <div class="sidebar p-2 sidebar">
-                    <!-- <a href="" class="d-flex text-decoration-none mt-1 align-items-center text-white">
-                        <span class="fs-4 d-none d-sm-inline">SideMenu</span>
-                    </a> -->
-                    <ul class="nav nav-pills flex-column mt-4">
-                        <li class="nav-item py-2 py-sm-0">
-                            <a href="" class="nav-link text-white">
-                                <i class='bx bx-home-alt-2'><span class="fs-4 ms-3 d-none d-sm-inline"> Dashboard
-                                    </span>
-                                </i>
-                            </a>
+        <div class="nav-link ms-auto">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <span class="fas fa-bell text-light" id="navbarDropdown2" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"></span>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+                        <li class="d-flex justify-content-between">
+                            <div class="me-5 dropdown-item clr">Notification</div>
+                            <button class="ms-5 dropdown-item orng bg-light">clear all</button>
                         </li>
-                        
-                        <li class="nav-item py-2 py-sm-0">
-                            <a href="" class="nav-link text-white">
-                                <i class='bx bxs-user-check'><span class="fs-4 ms-3 d-none d-sm-inline">
-                                        Attendence</span></i>
-                            </a>
-                        </li>
-                        <li class="nav-item py-2 py-sm-0">
-                            <a href="" class="nav-link text-white">
-                                <i class='bx bx-task'><span class="fs-4 ms-3 d-none d-sm-inline"> Task
-                                    </span></i>
-                            </a>
-                        </li>
-                        <li class="nav-item py-2 py-sm-0">
-                            <a href="" class="nav-link text-white">
-                                <iconify-icon icon="iconamoon:home-light"></iconify-icon><span
-                                    class="fs-4 ms-3 d-none d-sm-inline"> Daily Reporting
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item py-2 py-sm-0">
-                            <a href="" class="nav-link text-white">
-                                <iconify-icon icon="mdi:user-tick-outline"></iconify-icon><span
-                                    class="fs-4 ms-3 d-none d-sm-inline"> Leave
-                                </span>
-                            </a>
-                        </li>
-                    
-                    </ul>
-                    <div class="btn-group bot">
-                        <button type="button" class="btn text-white"><iconify-icon
-                                icon="bi:graph-down-arrow"></iconify-icon><span
-                                class="fs-4 d-none d-sm-inline">Action</span></button>
-                        <button type="button" class="btn dropdown-toggle text-white dropdown-toggle-split"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="visually-hidden">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu innerbtn">
-                            <li><a class="dropdown-item text-white" href="#">Attendance Report</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Task Report</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Monthly Report</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Yearly Report</a></li>
-                        </ul>
-                    </div>
-                    <br><br><br><br><br><br><br><br><br><br><br><br>
-                    <ul>
-                        <li class="nav-item py-2 py-sm-0">
-                            <a href="" class="nav-link text-white">
-                                <iconify-icon icon="fontisto:holiday-village"></iconify-icon><span
-                                    class="fs-4 d-none d-sm-inline"> Holiday
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- This is my content -->
-            <section class="Middle-Content row">
-                <div class="col-11">
-                    <div class=" Content-Header">
-                        <h1><b>Leaves</b></h1>
-                        <p>Dashboard / Leaves</p>
-                    </div>
-                    <div class="line1">
-                        <h1>Request a leaave</h1>
-                        <button class="btn btm">Back</button>
                         <hr>
-                        <div class="dates">
-                            <div class="from">
-                                <p>From</p>
-                                <input type="datetime" placeholder="e.g. 2023-07-24"><i class='bx bx-calendar'></i>
+                        <li>
+                            <div class="my-2 dropdown-item p-clr-3 border-start border-5 border-dark" href="#!">
+                                <p class="clr">Task completed - update CRUD</p>
+                                <p class="clr2 minn">43 Mins ago</p>
                             </div>
-                            <div class="to">
-                                <p>to</p>
-                                <input type="datetime" placeholder="e.g. 2023-07-24"><i class='bx bx-calendar'></i>
+                        </li>
+                        <li>
+                            <div class="my-2 dropdown-item p-clr-3 border-start border-5 border-dark" href="#!">
+                                <p class="clr">Leave Acceptted by HR</p>
+                                <p class="clr2 minn">1 Hour ago</p>
                             </div>
-                            <div class="days">
-                                <p>Number of days</p>
-                                <input type="text" placeholder="e.g. 2 Days">
+                        </li>
+                        <li><button class="dropdown-item text-center orng bg-light" href="#!">View all
+                                Notifications</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav ms-md-0 me-3 me-lg-4 border-1 border=light">
+            <li class="nav-item dropdown">
+                <img class="rounded-2 border border-light p-1" src="./assets/img/profile.jpg" alt="logo" height="50px"
+                    width="50px" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">My Prfile</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav" class="mt-3">
+            <nav class="sb-sidenav accordion" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav mt-2">
+                        <a class="nav-link text-light btn-stylee py-2" href="index.html">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/Dashboard.png" width="20" alt="">
                             </div>
-                        </div>
-                        <div class="textAreaBody">
-                            <p>Leave Reason</p>
-                            <textarea class="textArea"></textarea>
-                        </div>
-                        <div class="buttons">
-                            <button class="btn btm1">Submit</button>
-                            <button class="btn can">Cancel</button>
+                            Dashboard
+                        </a>
+                        <a class="nav-link text-light btn-stylee py-2" href="attendece.html">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/Attendance.png" width="20" alt="">
+                            </div>
+                            Attendence
+                        </a>
+                        <a class="nav-link text-light btn-stylee py-2" href="task1.html">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/Task.png" width="20" alt=""></div>
+                            Task
+                        </a>
+                        <a class="nav-link text-light btn-stylee py-2" href="daily_r.html">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/Daily Reporting.png" width="20"
+                                    alt="">
+                            </div>
+                            Daily Reporting
+                        </a>
+                        <a class="nav-link text-light btn-stylee py-2" href="leave.html">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/Leave.png" width="20" alt="">
+                            </div>
+                            Leave
+                        </a>
+                        <a class="nav-link text-light btn-stylee py-2" href="holdays.html">
+                            <div class="sb-nav-link-icon pe-1"><img src="./assets/img/Holiday.png" width="20" alt="">
+                            </div>
+                            holidays
+                        </a>
+                        <a class="nav-link collapsed text-light btn-stylee py-2" href="" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon pe-1 "><img src="./assets/img/Report.png" width="20" alt="">
+                            </div>
+                            Reports
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link text-light btn-stylee sub-text" href="">Attendence Report</a>
+                                <a class="nav-link text-light btn-stylee sub-text" href="">Task Report</a>
+                                <a class="nav-link text-light btn-stylee sub-text" href="">Monthly Report</a>
+                                <a class="nav-link text-light btn-stylee sub-text" href="">Yearly Report</a>
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </section> 
+                <div class="sb-sidenav-footer">
+                    <a class="nav-link text-light btn-stylee" href="">Disscuse with HR</a>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <section class="Middle-Content d-flex justify-content-center">
+                    <div class="col-11">
+                        <div class=" Content-Header">
+                            <h1><b>Leaves</b></h1>
+                            <p>Dashboard / Leaves</p>
+                        </div>
+                        <div class="line1 row">
+                            <h1 class="col-md-10">Request a leaave</h1>
+                            <button class="btn btm col-md-2">Back</button>
+                            <hr>
+                            <div class="dates row">
+                                <div class="from col-md-4">
+                                    <p>From</p>
+                                    <input type="datetime" placeholder="e.g. 2023-07-24"><i class='bx bx-calendar'></i>
+                                </div>
+                                <div class="to col-md-4">
+                                    <p>to</p>
+                                    <input type="datetime" placeholder="e.g. 2023-07-24"><i class='bx bx-calendar'></i>
+                                </div>
+                                <div class="days col-md-4">
+                                    <p>Number of days</p>
+                                    <input type="text" placeholder="e.g. 2 Days">
+                                </div>
+                            </div>
+                            <div class="textAreaBody">
+                                <p>Leave Reason</p>
+                                <textarea class="textArea"></textarea>
+                            </div>
+                            <div class="buttons">
+                                <button class="btn btm1">Submit</button>
+                                <button class="btn can">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
-    <!-- <aside>
-        <section class="sidebar container-fluid">
-            <div>
-                <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"><a href="#" class="nav-link text-white"><i
-                                class='bx bx-home-alt-2'>Dashboard</i></a></li>
-
-                    <li class="nav-item"><a href="#" class="nav-link text-white"><i
-                                class='bx bxs-user-check'>Attendence</i></a></li>
-
-                    <li class="nav-item"><a href="#" class="nav-link text-white"><i class='bx bx-task'>Task</i></a></li>
-                    
-                    <li class="nav-item"><a href="#" class="nav-link text-white"><iconify-icon
-                                icon="iconamoon:home-light"></iconify-icon>
-                            Daily Reporting</a></li>
-
-                    <li class="nav-item"><a href="/Leave/leave.html" class="nav-link text-white"><iconify-icon
-                                icon="mdi:user-tick-outline"></iconify-icon>Leave</a></li>
-
-                    <li class="nav-item"><a href="#" class="nav-link text-white"><iconify-icon
-                                icon="fontisto:holiday-village"></iconify-icon>Holiday</a></li>
-                </ul>
-            </div>
-            <div class="btn-group bot">
-                <button type="button" class="btn text-white"><iconify-icon
-                        icon="bi:graph-down-arrow"></iconify-icon>Action</button>
-                <button type="button" class="btn dropdown-toggle text-white dropdown-toggle-split"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu innerbtn">
-                    <li><a class="dropdown-item text-white" href="#">Attendance Report</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Task Report</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Monthly Report</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Yearly Report</a></li>
-                </ul>
-            </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><a href="#"
-                class="text-white text-decoration-none HR"><iconify-icon icon="mi:message"></iconify-icon>Discuss with
-                HR</a>
-        </section>
-    </aside> -->
-
-    <!-- Middle Content start Here -->
-     
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    <script src="./js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
         crossorigin="anonymous"></script>
-        <script src="./js/scripts.js"></script>
+
+
 </body>
 
 </html>

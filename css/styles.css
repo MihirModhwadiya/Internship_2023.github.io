@@ -12825,7 +12825,7 @@ body {
 
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
   width: 215px;
-  height: 100vh;
+  height: 100%;
   z-index: 1038;
 }
 
@@ -13246,11 +13246,11 @@ nav {
   padding: 30px;
 }
 
-.btn-style {
+.btn-stylee {
   font-size: larger;
 }
 
-.btn-style:hover {
+.btn-stylee:hover {
   /* font-size: larger; */
   border-left-style: solid;
   border-left-width: 5px;
